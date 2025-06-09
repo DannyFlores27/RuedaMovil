@@ -1,0 +1,1 @@
+export const GestionarBicicletas = () => <h2>Gestionar Bicicletas</h2>

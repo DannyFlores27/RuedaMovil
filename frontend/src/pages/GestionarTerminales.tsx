@@ -1,0 +1,1 @@
+export const GestionarTerminales = () => <h2>Gestionar Terminales</h2>
