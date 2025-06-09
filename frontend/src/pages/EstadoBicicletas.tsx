@@ -1,0 +1,1 @@
+export const EstadoBicicletas = () => <h2>Estado de Bicicletas</h2>

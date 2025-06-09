@@ -1,0 +1,1 @@
+export const GestionarReclamos = () => <h2>Gestionar Reclamos</h2>

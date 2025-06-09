@@ -1,0 +1,106 @@
+{
+  "hash": "5093356a",
+  "configHash": "019660c8",
+  "lockfileHash": "e954cc9c",
+  "browserHash": "80386cd4",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/.pnpm/react@19.1.0/node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "7575975e",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/.pnpm/react@19.1.0/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "b50d5a7f",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/.pnpm/react-dom@19.1.0_react@19.1.0/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "4287bc17",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/.pnpm/react-router-dom@7.6.2_reac_1685bec22ed3fd7beb8bb6734d7bb399/node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "1dad4e42",
+      "needsInterop": false
+    },
+    "@mui/material": {
+      "src": "../../node_modules/.pnpm/@mui+material@7.1.1_@emotio_bcda89fc086060a6e33a8b323c6d5090/node_modules/@mui/material/esm/index.js",
+      "file": "@mui_material.js",
+      "fileHash": "7544e2d5",
+      "needsInterop": false
+    },
+    "@mui/icons-material/Menu": {
+      "src": "../../node_modules/.pnpm/@mui+icons-material@7.1.1_@_54b0ce6b8de693653762102b27d3b6f7/node_modules/@mui/icons-material/esm/Menu.js",
+      "file": "@mui_icons-material_Menu.js",
+      "fileHash": "803c4ae1",
+      "needsInterop": false
+    },
+    "@mui/icons-material/MoveToInbox": {
+      "src": "../../node_modules/.pnpm/@mui+icons-material@7.1.1_@_54b0ce6b8de693653762102b27d3b6f7/node_modules/@mui/icons-material/esm/MoveToInbox.js",
+      "file": "@mui_icons-material_MoveToInbox.js",
+      "fileHash": "9cc31a0e",
+      "needsInterop": false
+    },
+    "@mui/icons-material/Mail": {
+      "src": "../../node_modules/.pnpm/@mui+icons-material@7.1.1_@_54b0ce6b8de693653762102b27d3b6f7/node_modules/@mui/icons-material/esm/Mail.js",
+      "file": "@mui_icons-material_Mail.js",
+      "fileHash": "45d4af89",
+      "needsInterop": false
+    },
+    "react-qr-code": {
+      "src": "../../node_modules/.pnpm/react-qr-code@2.0.15_react@19.1.0/node_modules/react-qr-code/lib/index.js",
+      "file": "react-qr-code.js",
+      "fileHash": "b7ad4956",
+      "needsInterop": true
+    },
+    "html-to-image": {
+      "src": "../../node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/index.js",
+      "file": "html-to-image.js",
+      "fileHash": "9da0955d",
+      "needsInterop": false
+    },
+    "qrcode.react": {
+      "src": "../../node_modules/.pnpm/qrcode.react@4.2.0_react@19.1.0/node_modules/qrcode.react/lib/esm/index.js",
+      "file": "qrcode__react.js",
+      "fileHash": "1a999fd0",
+      "needsInterop": false
+    },
+    "html5-qrcode": {
+      "src": "../../node_modules/.pnpm/html5-qrcode@2.3.8/node_modules/html5-qrcode/esm/index.js",
+      "file": "html5-qrcode.js",
+      "fileHash": "81d4b2aa",
+      "needsInterop": false
+    },
+    "zustand": {
+      "src": "../../node_modules/.pnpm/zustand@5.0.5_@types+react@19.1.2_react@19.1.0/node_modules/zustand/esm/index.mjs",
+      "file": "zustand.js",
+      "fileHash": "03337dc1",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-CUZE2RT6": {
+      "file": "chunk-CUZE2RT6.js"
+    },
+    "chunk-GQELU2SF": {
+      "file": "chunk-GQELU2SF.js"
+    },
+    "chunk-RPOOXQDX": {
+      "file": "chunk-RPOOXQDX.js"
+    },
+    "chunk-OWPSNQWW": {
+      "file": "chunk-OWPSNQWW.js"
+    },
+    "chunk-UPIQUO6F": {
+      "file": "chunk-UPIQUO6F.js"
+    },
+    "chunk-DC5AMYBS": {
+      "file": "chunk-DC5AMYBS.js"
+    }
+  }
+}
