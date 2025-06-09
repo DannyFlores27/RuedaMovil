@@ -44,9 +44,6 @@ importers:
       react-qr-code:
         specifier: ^2.0.15
         version: 2.0.15(react@19.1.0)
-      react-qr-svg:
-        specifier: ^2.4.0
-        version: 2.4.0(react@19.1.0)
       react-router-dom:
         specifier: ^7.6.2
         version: 7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1819,12 +1816,6 @@ packages:
     resolution: {integrity: sha512-MkZcjEXqVKqXEIMVE0mbcGgDpkfSdd8zhuzXEl9QzYeNcw8Hq2oVIzDLWuZN2PQBwM5PWjc2S31K8Q1UbcFMfw==}
     peerDependencies:
       react: '*'
-
-  react-qr-svg@2.4.0:
-    resolution: {integrity: sha512-3Q/LyjBi+eWjJ0WyZvBzyY3rCMlUBZyRnbTcKbXQ39J1bd0/vgqYhXoYai7XlDTS42Ro50BBY4TmeUVyIZh+nA==}
-    deprecated: qrcode.react has SVG support now, please use it instead
-    peerDependencies:
-      react: '>= 0.11.2 < 18.0.0'
 
   react-router-dom@7.6.2:
     resolution: {integrity: sha512-Q8zb6VlTbdYKK5JJBLQEN06oTUa/RAbG/oQS1auK1I0TbJOXktqm+QENEVJU6QvWynlXPRBXI3fiOQcSEA78rA==}
@@ -4061,12 +4052,6 @@ snapshots:
   react-is@19.1.0: {}
 
   react-qr-code@2.0.15(react@19.1.0):
-    dependencies:
-      prop-types: 15.8.1
-      qr.js: 0.0.0
-      react: 19.1.0
-
-  react-qr-svg@2.4.0(react@19.1.0):
     dependencies:
       prop-types: 15.8.1
       qr.js: 0.0.0
