@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { type Seccion } from '../types'
+import { type Seccion } from '../types.d'
 
 interface State {
   secciones: Seccion[]
