@@ -12,7 +12,7 @@ import {
   Button,
   Stack
 } from '@mui/material';
-import QRCode from 'react-qr-code';
+import { QRCodeSVG } from 'qrcode.react';  // Import correcto para SVG QR
 
 interface Prestamo {
   id_prestamo: number;
@@ -28,13 +28,13 @@ interface Prestamo {
   modelo: string;
 }
 
-const estados = ['todos', 'activo', 'finalizado'];
+const estados = ['todos', 'activo', 'finalizado'] as const; // Tipo literal para mejor seguridad
 
 const prestamosPorPagina = 10;
 
 export const MisPrestamos = () => {
   const [prestamos, setPrestamos] = useState<Prestamo[]>([]);
-  const [filtro, setFiltro] = useState('todos');
+  const [filtro, setFiltro] = useState<typeof estados[number]>('todos');
   const [pagina, setPagina] = useState(1);
   const [error, setError] = useState('');
 
@@ -51,6 +51,7 @@ export const MisPrestamos = () => {
         const data = await res.json();
 
         if (res.ok && data.historial) {
+          // Ordenar primero activos y luego finalizados para tener consistencia
           const activos = data.historial.filter((p: Prestamo) => p.estado === 'activo');
           const finalizados = data.historial.filter((p: Prestamo) => p.estado === 'finalizado');
           setPrestamos([...activos, ...finalizados]);
@@ -65,17 +66,20 @@ export const MisPrestamos = () => {
     fetchHistorial();
   }, []);
 
+  // Filtrar préstamos según estado
   const prestamosFiltrados = prestamos.filter(p =>
     filtro === 'todos' ? true : p.estado === filtro
   );
 
   const totalPaginas = Math.ceil(prestamosFiltrados.length / prestamosPorPagina);
 
+  // Paginación simple
   const prestamosPaginados = prestamosFiltrados.slice(
     (pagina - 1) * prestamosPorPagina,
     pagina * prestamosPorPagina
   );
 
+  // Exportar CSV
   const exportarCSV = () => {
     const filas = [
       ['ID', 'Bicicleta', 'Modelo', 'Origen', 'Destino', 'Inicio', 'Fin', 'Estado', 'Código']
@@ -117,7 +121,7 @@ export const MisPrestamos = () => {
           label="Filtrar por estado"
           value={filtro}
           onChange={(e) => {
-            setFiltro(e.target.value);
+            setFiltro(e.target.value as typeof estados[number]);
             setPagina(1);
           }}
           size="small"
@@ -146,7 +150,11 @@ export const MisPrestamos = () => {
       )}
 
       {prestamosPaginados.map((p) => (
-        <Card key={p.id_prestamo} variant="outlined" sx={{ bgcolor: p.estado === 'activo' ? '#e3f2fd' : 'inherit' }}>
+        <Card
+          key={p.id_prestamo}
+          variant="outlined"
+          sx={{ bgcolor: p.estado === 'activo' ? '#e3f2fd' : 'inherit' }}
+        >
           <CardContent>
             <Typography variant="h6">
               {p.estado === 'activo' ? 'Préstamo Activo' : `Préstamo Finalizado #${p.id_prestamo}`}
@@ -166,7 +174,7 @@ export const MisPrestamos = () => {
             <Typography><strong>Código de desbloqueo:</strong> {p.codigo_desbloqueo}</Typography>
 
             <Box mt={2} textAlign="center">
-              <QRCode value={p.codigo_desbloqueo} size={100} />
+              <QRCodeSVG value={p.codigo_desbloqueo} size={100} />
             </Box>
           </CardContent>
         </Card>

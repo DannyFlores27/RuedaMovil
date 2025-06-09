@@ -17,10 +17,13 @@
     "@mui/material": "7.1.1",
     "@typescript-eslint/parser": "5.62.0",
     "html-to-image": "^1.11.13",
+    "html5-qrcode": "^2.3.8",
+    "qrcode.react": "^4.2.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-qr-code": "^2.0.15",
     "react-qr-reader": "3.0.0-beta-1",
+    "react-qr-svg": "^2.4.0",
     "react-router-dom": "^7.6.2",
     "zustand": "5.0.5"
   },

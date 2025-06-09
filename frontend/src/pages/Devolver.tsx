@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Box,
   Button,
@@ -9,7 +9,7 @@ import {
   Divider,
   Collapse
 } from '@mui/material';
-import { QrReader } from 'react-qr-reader';
+import { Html5QrcodeScanner } from 'html5-qrcode';
 
 interface Terminal {
   id_terminal: number;
@@ -26,6 +26,7 @@ export const Devolver = () => {
   const [loading, setLoading] = useState(false);
   const [mostrarScanner, setMostrarScanner] = useState(false);
   const [alertaQR, setAlertaQR] = useState('');
+  const scannerRef = useRef<Html5QrcodeScanner | null>(null);
 
   useEffect(() => {
     const fetchTerminales = async () => {
@@ -61,6 +62,43 @@ export const Devolver = () => {
     setMensaje('');
     setError('');
   }, [destino, codigo]);
+
+  useEffect(() => {
+    if (mostrarScanner) {
+      const config = {
+        fps: 10,
+        qrbox: 250
+      };
+
+      scannerRef.current = new Html5QrcodeScanner(
+        'qr-reader',
+        config,
+        false
+      );
+
+      scannerRef.current.render(
+        (text) => {
+          setCodigo(text);
+          setMostrarScanner(false);
+          setAlertaQR('Código escaneado correctamente.');
+          setTimeout(() => setAlertaQR(''), 3000);
+          scannerRef.current?.clear();
+        },
+        (err) => {
+          console.error(err);
+          setError('No se pudo acceder a la cámara.');
+          setMostrarScanner(false);
+        }
+      );
+    } else {
+      scannerRef.current?.clear().catch(console.warn);
+    }
+
+    // Cleanup on unmount
+    return () => {
+      scannerRef.current?.clear().catch(console.warn);
+    };
+  }, [mostrarScanner]);
 
   const handleDevolver = async () => {
     if (!codigo || destino === null) {
@@ -98,21 +136,6 @@ export const Devolver = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleScan = (data: string | null) => {
-    if (data) {
-      setCodigo(data);
-      setMostrarScanner(false);
-      setAlertaQR('Código escaneado correctamente.');
-      setTimeout(() => setAlertaQR(''), 3000);
-    }
-  };
-
-  const handleError = (err: any) => {
-    console.error(err);
-    setError('No se pudo acceder a la cámara.');
-    setMostrarScanner(false);
   };
 
   return (
@@ -167,12 +190,7 @@ export const Devolver = () => {
 
       {mostrarScanner && (
         <Box mt={2}>
-          <QrReader
-            delay={300}
-            onError={handleError}
-            onScan={handleScan}
-            style={{ width: '100%' }}
-          />
+          <div id="qr-reader" style={{ width: '100%' }}></div>
         </Box>
       )}
 
