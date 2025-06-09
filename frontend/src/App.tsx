@@ -15,7 +15,6 @@ import {
   ListItemText,
   Divider,
   CssBaseline,
-  useMediaQuery,
   createTheme,
   ThemeProvider,
 } from '@mui/material'
@@ -35,7 +34,6 @@ export default function App() {
   const initializeFromToken = useSeccionesStore((state) => state.initializeFromToken)
   const logout = useSeccionesStore((state) => state.logout)
   const navigate = useNavigate()
-  const isMobile = useMediaQuery(darkTheme.breakpoints.down('sm'))
 
   useEffect(() => {
     const token = localStorage.getItem('token')
