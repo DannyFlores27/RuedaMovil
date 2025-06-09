@@ -40,7 +40,7 @@ export const Devolver = () => {
         const data = await res.json();
 
         if (res.ok && data.terminales) {
-          const activas = data.terminales.filter((t: any) => t.estado === 'A');
+          const activas = data.terminales.filter((t: any) => t.estado === 'activa');
           setTerminales(activas);
           if (activas.length > 0) {
             setDestino(activas[0].id_terminal);

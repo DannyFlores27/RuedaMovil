@@ -38,7 +38,7 @@ export const Reservar = () => {
         const data = await res.json();
 
         if (res.ok && data.terminales) {
-          const activas = data.terminales.filter((t: any) => t.estado === 'A');
+          const activas = data.terminales.filter((t: any) => t.estado === 'activa');
           setTerminales(activas);
           if (activas.length >= 2) {
             setOrigen(activas[0].id_terminal);

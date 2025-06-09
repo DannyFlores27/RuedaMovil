@@ -2,14 +2,14 @@ const mysql = require('mysql2/promise');
 require('dotenv').config();
 
 const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    port: process.env.MYSQL_PORT,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE
 });
 console.log("📦 Cargando variables de entorno...");
-console.log("DB_USER:", process.env.DB_USER);
-console.log("DB_PASSWORD:", process.env.DB_PASSWORD ? "****" : "(vacío)");
-console.log("DB_NAME:", process.env.DB_NAME);
+console.log("MYSQL_USER:", process.env.MYSQL_USER);
+console.log("MYSQL_PASSWORD:", process.env.MYSQL_PASSWORD ? "****" : "(vacío)");
+console.log("MYSQL_DATABASE:", process.env.MYSQL_DATABASE);
 
 module.exports = pool;

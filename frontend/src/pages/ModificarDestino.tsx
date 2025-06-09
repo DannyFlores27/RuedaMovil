@@ -33,7 +33,7 @@ export const ModificarDestino = () => {
         const data = await res.json();
 
         if (res.ok && data.terminales) {
-          const activas = data.terminales.filter((t: any) => t.estado === 'A');
+          const activas = data.terminales.filter((t: any) => t.estado === 'activa');
           setTerminales(activas);
           if (activas.length > 0) {
             setNuevoDestino(activas[0].id_terminal);
