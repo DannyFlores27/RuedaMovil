@@ -1,0 +1,1 @@
+export const Reporte = () => <h2>Reporte</h2>

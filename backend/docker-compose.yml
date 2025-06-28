@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container_ruedamovil
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    command: --lower_case_table_names=2
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./scripts:/docker-entrypoint-initdb.d
+    networks:
+      - mysql-net
+
+networks:
+  mysql-net:
+    driver: bridge

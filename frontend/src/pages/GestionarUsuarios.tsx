@@ -1,0 +1,1 @@
+export const GestionarUsuarios = () => <h2>Gestionar Usuarios</h2>
