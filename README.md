@@ -49,4 +49,6 @@ App Web Alquiler de Bicicletas "RuedaMovil". Docker: MySQL. Backend: NodeJS-Expr
 # API test
 ![image](https://github.com/user-attachments/assets/5c2909d3-e9b1-43b5-bb83-4d616e720eac)
 ![image](https://github.com/user-attachments/assets/164ca770-521b-486b-a09f-5c947cb9dc56)
+# JWT
+![image](https://github.com/user-attachments/assets/d55e9af8-e179-4800-b2ef-b59655e0d387)
 
