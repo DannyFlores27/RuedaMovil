@@ -12,7 +12,7 @@ export const Login = () => {
 
   const handleLogin = async () => {
   try {
-    const res = await fetch('http://localhost:3351/api/auth/login', {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ export const Login = () => {
         <TextField label="Contraseña" type="password" fullWidth value={password} onChange={e => setPassword(e.target.value)} />
 
         <Button variant="contained" onClick={handleLogin}>Iniciar Sesión</Button>
-        <Button variant="outlined" disabled>Registrarse</Button> {/* En desarrollo */}
+        <Button variant="outlined" onClick={() => navigate('/registro')}>Registrarse</Button>
       </Stack>
     </Container>
   )

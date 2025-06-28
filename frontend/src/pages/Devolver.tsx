@@ -31,7 +31,7 @@ export const Devolver = () => {
   useEffect(() => {
     const fetchTerminales = async () => {
       try {
-        const res = await fetch('http://localhost:3351/api/terminales/estado', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/terminales/estado`, {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token'),
           }
@@ -111,7 +111,7 @@ export const Devolver = () => {
     setError('');
 
     try {
-      const res = await fetch('http://localhost:3351/api/prestamos/devolver', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/prestamos/devolver`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

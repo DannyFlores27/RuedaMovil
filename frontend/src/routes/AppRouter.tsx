@@ -1,6 +1,7 @@
 // src/routes/AppRouter.tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Login } from '../pages/Login'
+import { Registro } from '../pages/Registro'
 import App from '../App'
 import { PrivateRoute } from './PrivateRoute'
 
@@ -28,6 +29,7 @@ export const AppRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
         <Route path="/" element={<PrivateRoute><App /></PrivateRoute>}>
           <Route index element={<Inicio />} />
           <Route path="reservar" element={<Reservar />} />

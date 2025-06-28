@@ -29,7 +29,7 @@ export const Reservar = () => {
   useEffect(() => {
     const fetchTerminales = async () => {
       try {
-        const res = await fetch('http://localhost:3351/api/terminales/estado', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/terminales/estado`, {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token'),
           }
@@ -68,7 +68,7 @@ export const Reservar = () => {
     setMensaje('');
     setError('');
     try {
-      const res = await fetch('http://localhost:3351/api/prestamos/reservar', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/prestamos/reservar`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

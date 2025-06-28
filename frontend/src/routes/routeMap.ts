@@ -1,6 +1,8 @@
 // src/routes/routeMap.ts
 
 export const routeMap: Record<string, string> = {
+  'Login': '/login',
+  'Registro': '/registro',
   'Reservar': '/reservar',
   'Modificar Destino': '/modificar-destino',
   'Disponibilidad': '/disponibilidad',

@@ -41,7 +41,7 @@ export const MisPrestamos = () => {
   useEffect(() => {
     const fetchHistorial = async () => {
       try {
-        const res = await fetch('http://localhost:3351/api/prestamos/historial', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/prestamos/historial`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: 'Bearer ' + localStorage.getItem('token'),
