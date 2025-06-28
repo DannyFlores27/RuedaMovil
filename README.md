@@ -21,6 +21,7 @@ App Web Alquiler de Bicicletas "RuedaMovil". Docker: MySQL. Backend: NodeJS-Expr
 ![image](https://github.com/user-attachments/assets/859eac05-b43f-47e0-836d-7af8c754152b)
 # Mis préstamos filtros
 ![image](https://github.com/user-attachments/assets/0c590fb5-6209-471e-9ed3-ac518d4c9eb5)
+![image](https://github.com/user-attachments/assets/7f202e25-7994-4787-bc6d-d8f3028a86f5)
 ![image](https://github.com/user-attachments/assets/29369fcf-091e-4950-84b4-7dad66881e3b)
 # Mis préstamos exportar a CSV
 ![image](https://github.com/user-attachments/assets/a8539c61-ba9d-491b-be29-a13522df6da0)
